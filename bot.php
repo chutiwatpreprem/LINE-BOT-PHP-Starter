@@ -1,4 +1,7 @@
 <?php
+$proxy = 'http://fixie:L1EEC8Uy4gr9bl3@velodrome.usefixie.com:80';
+$proxyauth = '';
+
 $access_token = 'jZ2DUVXRbdH/oAPpwkIZyO0l7cCMXERHlRmGMZ569kel5lXe+Xhexg7LG+d8/xfSAgw2O0tyWiMLsemL61pZB14Pc9HzQoxOO6XIYS6vqYwxITLl1EcMP5BLr8Y0etsBPjT4wmM+iYl0rAJSc3zDuAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -22,7 +25,7 @@ if (!is_null($events['events'])) {
 			} else {
 				$text = $event['message']['text'];
 			}
-			
+
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -32,12 +35,17 @@ if (!is_null($events['events'])) {
 				'text' => $text
 			];
 
+			$messages2 = [
+				'type' => 'text',
+				'text' => "Hello"
+			];
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$messages,$messages2],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -48,6 +56,9 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($ch, CURLOPT_PROXY, $proxy);
+			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
+
 			$result = curl_exec($ch);
 			curl_close($ch);
 
