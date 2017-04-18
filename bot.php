@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			
 
-			if ($event['message']['text'] == "Do You Love Me ?") {
+			if ($event['message']['text'] == "Do you love me") {
 				$text  = "I Love Kukkik Verymuch ^^. Do You Love Me?";
 
 			} else {
