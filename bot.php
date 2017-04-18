@@ -21,12 +21,7 @@ if (!is_null($events['events'])) {
 			
 
 			if ($event['message']['text'] == "Do You Love Me?") {
-				$text  = "I Love Kukkik Verymuch ^^.";
-
-				$messages2 = [
-				'type' => 'text',
-				'text' => "And You?"
-				];
+				$text  = "I Love Kukkik Verymuch ^^. Do You Love Me?";
 
 			} else {
 				$text = $event['message']['text'];
@@ -35,7 +30,7 @@ if (!is_null($events['events'])) {
 
 			if ($event['message']['text'] == "Yes") {
 				$text  = "Yed Mai?";
-				
+
 			} else {
 				$text = $event['message']['text'];
 			}
@@ -55,7 +50,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages2],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
