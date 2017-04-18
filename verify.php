@@ -1,6 +1,6 @@
 <?php
 
-$proxy = 'http://fixie:L1EEC8Uy4gr9bl3@velodro';
+$proxy = 'http://fixie:L1EEC8Uy4gr9bl3@velodrome.usefixie.com:80';
 $proxyauth = '';
 
 $access_token = 'jZ2DUVXRbdH/oAPpwkIZyO0l7cCMXERHlRmGMZ569kel5lXe+Xhexg7LG+d8/xfSAgw2O0tyWiMLsemL61pZB14Pc9HzQoxOO6XIYS6vqYwxITLl1EcMP5BLr8Y0etsBPjT4wmM+iYl0rAJSc3zDuAdB04t89/1O/w1cDnyilFU=';
