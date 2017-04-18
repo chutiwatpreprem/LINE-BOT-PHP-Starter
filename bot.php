@@ -20,8 +20,8 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			
 
-			if ($event['message']['text'] == "Love") {
-				$text  = "Love U too.";
+			if ($event['message']['text'] == "Do You Love Me?") {
+				$text  = "I Love Kukkik Verymuch ^^.";
 			} else {
 				$text = $event['message']['text'];
 			}
@@ -66,4 +66,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "Success";
+echo $content;
