@@ -23,17 +23,17 @@ if (!is_null($events['events'])) {
 			if ($event['message']['text'] == "Do you love me") {
 				$text  = "I Love Kukkik Verymuch ^^. Do You Love Me?";
 
-			} else {
-				$text = $event['message']['text'];
-			}
-
-
-			if ($event['message']['text'] == "Yes") {
+			} 	else if($event['message']['text'] == "Yes"){
 				$text  = "Yed Mai?";
-
-			} else {
+			} 
+				else if($event['message']['text'] == "Where"){
+				$text  = "Bathroom mai? Hee Hee";
+			} 
+			else {
 				$text = $event['message']['text'];
 			}
+
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
