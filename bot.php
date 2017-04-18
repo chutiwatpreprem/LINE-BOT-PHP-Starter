@@ -22,10 +22,23 @@ if (!is_null($events['events'])) {
 
 			if ($event['message']['text'] == "Do You Love Me?") {
 				$text  = "I Love Kukkik Verymuch ^^.";
+
+				$messages2 = [
+				'type' => 'text',
+				'text' => "And You?"
+				];
+
 			} else {
 				$text = $event['message']['text'];
 			}
 
+
+			if ($event['message']['text'] == "Yes") {
+				$text  = "Yed Mai?";
+				
+			} else {
+				$text = $event['message']['text'];
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -35,10 +48,7 @@ if (!is_null($events['events'])) {
 				'text' => $text
 			];
 
-			$messages2 = [
-				'type' => 'text',
-				'text' => "Hello"
-			];
+			
 
 
 			// Make a POST Request to Messaging API to reply to sender
