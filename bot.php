@@ -110,8 +110,8 @@ if (!is_null($events['events'])) {
 
 		if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
 
-			$pic = "http://www.nsjsolutions.com/lineapi/1.jpg";
-			$pic2 = "http://www.nsjsolutions.com/lineapi/1.jpg";
+			$pic = "https://github.com/chutiwatpreprem/LINE-BOT-PHP-Starter/blob/master/1.jpg";
+			$pic2 = "https://github.com/chutiwatpreprem/LINE-BOT-PHP-Starter/blob/master/no_pic_user.jpg";
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
