@@ -149,3 +149,34 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "Success";
+?>
+
+<?php
+ 
+$strAccessToken = "jZ2DUVXRbdH/oAPpwkIZyO0l7cCMXERHlRmGMZ569kel5lXe+Xhexg7LG+d8/xfSAgw2O0tyWiMLsemL61pZB14Pc9HzQoxOO6XIYS6vqYwxITLl1EcMP5BLr8Y0etsBPjT4wmM+iYl0rAJSc3zDuAdB04t89/1O/w1cDnyilFU=";
+ 
+$strUrl = "https://api.line.me/v2/bot/message/push";
+ 
+$arrHeader = array();
+$arrHeader[] = "Content-Type: application/json";
+$arrHeader[] = "Authorization: Bearer {$strAccessToken}";
+ 
+$arrPostData = array();
+$arrPostData['to'] = "Uf55b4f528d36c8246795e12f636afa08";
+$arrPostData['messages'][0]['type'] = "text";
+$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
+ 
+ 
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$strUrl);
+curl_setopt($ch, CURLOPT_HEADER, false);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$result = curl_exec($ch);
+curl_close ($ch);
+ 
+echo "push Success";
+?>
