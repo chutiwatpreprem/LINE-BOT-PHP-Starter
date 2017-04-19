@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 $proxy = 'http://fixie:L1EEC8Uy4gr9bl3@velodrome.usefixie.com:80';
 $proxyauth = '';
 
@@ -146,6 +147,49 @@ if (!is_null($events['events'])) {
 		}
 
 
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			// Get text sent
+			
+
+			if ($event['message']['text'] == "uid") {
+				
+				$text = $event['message']['text']. " ".$event['source']['userId'];
+				
+			}
+
+		
+
+			// Build message to reply back
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+			];
+
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($ch, CURLOPT_PROXY, $proxy);
+			curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
+
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo $result . "\r\n";
+		}
+
+
 	}
 }
 echo "Success";
@@ -163,10 +207,18 @@ $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
  
 $arrPostData = array();
 $arrPostData['to'] = "Uf55b4f528d36c8246795e12f636afa08";
+
 $arrPostData['messages'][0]['type'] = "text";
 $arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
+
+$arrPostData['messages'][1]['type'] = "sticker";
+$arrPostData['messages'][1]['packageId'] = "1";
+$arrPostData['messages'][1]['stickerId'] = "2";
  
- 
+echo "<pre>"; 
+print_r($arrPostData);
+echo "</pre>";
+ //exit();
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,$strUrl);
 curl_setopt($ch, CURLOPT_HEADER, false);
@@ -180,3 +232,12 @@ curl_close ($ch);
  
 echo "push Success";
 ?>
+
+
+<?php 
+
+
+
+
+
+ ?>
