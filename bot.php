@@ -1,5 +1,5 @@
 <?php
-// header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=utf-8');
 // $proxy = 'http://fixie:L1EEC8Uy4gr9bl3@velodrome.usefixie.com:80';
 // $proxyauth = '';
 
