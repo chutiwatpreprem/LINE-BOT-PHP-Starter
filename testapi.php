@@ -65,20 +65,22 @@
  $access_token  = 'jZ2DUVXRbdH/oAPpwkIZyO0l7cCMXERHlRmGMZ569kel5lXe+Xhexg7LG+d8/xfSAgw2O0tyWiMLsemL61pZB14Pc9HzQoxOO6XIYS6vqYwxITLl1EcMP5BLr8Y0etsBPjT4wmM+iYl0rAJSc3zDuAdB04t89/1O/w1cDnyilFU=';
 
 $bot = new BOT_API($channelSecret, $access_token);
-	echo "test";
-if (!empty($bot->isEvents)) {
+
+echo "test";
+	
+// if (!empty($bot->isEvents)) {
 		
-	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
+// 	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
 
-	if ($bot->isSuccess()) {
-		echo 'Succeeded!';
-		exit();
-	}
+// 	if ($bot->isSuccess()) {
+// 		echo 'Succeeded!';
+// 		exit();
+// 	}
 
-	// Failed
-	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
-	exit();
+// 	// Failed
+// 	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+// 	exit();
 
-}
+// }
 
   ?>
