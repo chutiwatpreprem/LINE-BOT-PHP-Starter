@@ -174,7 +174,8 @@ $arrPostData['messages'][0]['text'] = "นี้คือการทดสอ�
 $arrPostData['messages'][1]['type'] = "sticker";
 $arrPostData['messages'][1]['packageId'] = "1";
 $arrPostData['messages'][1]['stickerId'] = "2";
- 
+
+echo "test"; 
 echo "<pre>"; 
 print_r($arrPostData);
 echo "</pre>";
