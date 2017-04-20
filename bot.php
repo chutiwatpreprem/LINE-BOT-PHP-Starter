@@ -228,6 +228,70 @@ if ($bot->isfollow) {
 
 }
 
+if ($bot->unfollow) {
+	
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
+	
+
+	if ($bot->isSuccess()) {
+		echo 'Succeeded!';
+		exit();
+	}
+
+	// Failed
+	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+	exit();
+
+}
+
+if ($bot->join) {
+	
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
+	
+
+	if ($bot->isSuccess()) {
+		echo 'Succeeded!';
+		exit();
+	}
+
+	// Failed
+	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+	exit();
+
+}
+
+if ($bot->leave) {
+	
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
+	
+
+	if ($bot->isSuccess()) {
+		echo 'Succeeded!';
+		exit();
+	}
+
+	// Failed
+	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+	exit();
+
+}
+
+if ($bot->isText) {
+	
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
+	
+
+	if ($bot->isSuccess()) {
+		echo 'Succeeded!';
+		exit();
+	}
+
+	// Failed
+	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+	exit();
+
+}
+
 // if (!empty($bot->isEvents)) {
 
 // 	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message),json_encode($bot->source));

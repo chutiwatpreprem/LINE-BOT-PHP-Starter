@@ -26,6 +26,9 @@ class BOT_API extends LINEBot {
     public $isImage         = false;
     public $isSticker       = false;
     public $isfollow        = false; 
+    public $unfollow        = false;
+    public $join            = false;
+    public $leave           = false;
 	
     public $text            = null;
     public $replyToken      = null;
@@ -77,7 +80,22 @@ class BOT_API extends LINEBot {
 
                  if ($event['type'] == 'follow') {
                        $this->isfollow = true;
-                       $this->text   = 'Add Friend';
+                       $this->text   = 'Hi Follow';
+                }
+
+                if ($event['type'] == 'unfollow') {
+                       $this->unfollow = true;
+                       $this->text   = 'Unfollow';
+                }
+
+                if ($event['type'] == 'join') {
+                       $this->join = true;
+                       $this->text   = 'join';
+                }
+
+                if ($event['type'] == 'leave') {
+                       $this->leave = true;
+                       $this->text   = 'leave';
                 }
 
 				
