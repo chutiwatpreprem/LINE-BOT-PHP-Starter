@@ -61,19 +61,19 @@ class BOT_API extends LINEBot {
                 $this->message    = (object) $event['message'];
                 $this->timestamp  = $event['timestamp'];
 				
-                // if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-                //     $this->isText = true;
-                //     //$this->text   = $event['message']['text'];
+                if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+                    $this->isText = true;
+                    $this->text   = $event['message']['text'];
                 
-                // }
+                }
 				
-                // if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
-                //     $this->isImage = true;
-                // }
+                if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
+                    $this->isImage = true;
+                }
 				
-                // if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
-                //     $this->isSticker = true;
-                // }
+                if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
+                    $this->isSticker = true;
+                }
 
                  if ($event['type'] == 'follow') {
                        $this->isfollow = true;
