@@ -212,8 +212,8 @@ echo "test1";
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 //$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("Hello"));	
 
-if (!empty($bot->isEvents)) {
-
+if ($bot->isText) {
+	
 	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message),json_encode($bot->source));
 	
 
@@ -227,5 +227,21 @@ if (!empty($bot->isEvents)) {
 	exit();
 
 }
+
+// if (!empty($bot->isEvents)) {
+
+// 	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message),json_encode($bot->source));
+	
+
+// 	if ($bot->isSuccess()) {
+// 		echo 'Succeeded!';
+// 		exit();
+// 	}
+
+// 	// Failed
+// 	echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+// 	exit();
+
+// }
 
   ?>
