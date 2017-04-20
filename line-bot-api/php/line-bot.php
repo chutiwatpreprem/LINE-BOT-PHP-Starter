@@ -124,6 +124,15 @@ class BOT_API extends LINEBot {
             //'source'     => $messageBuilder->buildMessage(),
         ]);
     }
+
+    // public function GetProfile ($replyToken = null, $message = null) {
+    //     $messageBuilder = new TextMessageBuilder($message);
+    //     $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
+    //         'replyToken' => $replyToken,
+    //         'messages'   => $messageBuilder->buildMessage(),
+    //         //'source'     => $messageBuilder->buildMessage(),
+    //     ]);
+    // }
 	
     public function isSuccess () {
         return !empty($this->response->isSucceeded()) ? true : false;
