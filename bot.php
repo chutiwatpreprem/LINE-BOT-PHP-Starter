@@ -210,8 +210,8 @@ $bot = new BOT_API($channelSecret, $access_token);
 
 echo "test1";
 
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $response = $bot->getProfile($Userid);
 if ($response->isSucceeded()) {
     $profile = $response->getJSONDecodedBody();
