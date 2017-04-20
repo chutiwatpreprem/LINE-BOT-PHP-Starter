@@ -208,13 +208,15 @@ header('Content-Type: text/html; charset=utf-8');
 $bot = new BOT_API($channelSecret, $access_token);
 
 
-echo "test1";
+echo "Test"."<br>";
 
 //$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $response = $bot->getProfile($Userid);
 if ($response->isSucceeded()) {
     $profile = $response->getJSONDecodedBody();
+    
+    echo $profile['userId'];
     echo $profile['displayName'];
     echo $profile['pictureUrl'];
     echo $profile['statusMessage'];
