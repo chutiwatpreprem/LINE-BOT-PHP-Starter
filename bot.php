@@ -215,11 +215,12 @@ echo "Test"."<br>";
 $response = $bot->getProfile($Userid);
 if ($response->isSucceeded()) {
     $profile = $response->getJSONDecodedBody();
-    
+
     echo $profile['userId'];
     echo $profile['displayName'];
     echo $profile['pictureUrl'];
     echo $profile['statusMessage'];
+    $bot->sendMessageNew($Userid, $profile['displayName']);
 }
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
