@@ -77,7 +77,7 @@ class BOT_API extends LINEBot {
 
                  if ($event['type'] == 'follow') {
                        $this->isfollow = true;
-                       $this->text   = "Add Friend";
+                       $this->text   = 'Add Friend';
                 }
 
 				
