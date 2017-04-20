@@ -58,7 +58,7 @@ class BOT_API extends LINEBot {
 				
                 $this->replyToken = $event['replyToken'];
                 $this->source     = (object) $event['source'];
-                $this->message    = (object) $event['message'];
+                //$this->message    = (object) $event['message'];
                 $this->timestamp  = $event['timestamp'];
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
