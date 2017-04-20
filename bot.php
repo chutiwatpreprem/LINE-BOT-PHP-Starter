@@ -214,7 +214,7 @@ echo "test1";
 
 if (!empty($bot->isEvents)) {
 
-	$bot->replyMessageNew($bot->replyToken, json_encode($bot->source,$bot->message));
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message),json_encode($bot->source));
 	
 
 	if ($bot->isSuccess()) {
