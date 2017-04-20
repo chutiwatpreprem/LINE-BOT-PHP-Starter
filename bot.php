@@ -210,15 +210,15 @@ $bot = new BOT_API($channelSecret, $access_token);
 
 echo "test1";
 
-// $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-// $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-// $bot->getProfile($Userid);
-// if ($bot->isSuccess()) {
-//     $profile = $bot->getJSONDecodedBody();
-//     echo $profile['displayName'];
-//     echo $profile['pictureUrl'];
-//     echo $profile['statusMessage'];
-// }
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+$bot->getProfile($Userid);
+if ($bot->isSuccess()) {
+    $profile = $bot->getJSONDecodedBody();
+    echo $profile['displayName'];
+    echo $profile['pictureUrl'];
+    echo $profile['statusMessage'];
+}
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 //$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("Hello"));	
