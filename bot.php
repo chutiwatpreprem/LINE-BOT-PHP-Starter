@@ -203,16 +203,17 @@ header('Content-Type: text/html; charset=utf-8');
 
  $channelSecret = '0e769d9bc59875d0bbfe4ca904e28865';
  $access_token  = 'jZ2DUVXRbdH/oAPpwkIZyO0l7cCMXERHlRmGMZ569kel5lXe+Xhexg7LG+d8/xfSAgw2O0tyWiMLsemL61pZB14Pc9HzQoxOO6XIYS6vqYwxITLl1EcMP5BLr8Y0etsBPjT4wmM+iYl0rAJSc3zDuAdB04t89/1O/w1cDnyilFU=';
+ $Userid = 'Uf55b4f528d36c8246795e12f636afa08';
 
 $bot = new BOT_API($channelSecret, $access_token);
 
 
 echo "test1";
 
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-$response = $bot->getProfile('Uf55b4f528d36c8246795e12f636afa08');
-if ($response->isSucceeded()) {
+// $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+// $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+$response = $bot->getProfile($Userid);
+if ($response->isSuccess()) {
     $profile = $response->getJSONDecodedBody();
     echo $profile['displayName'];
     echo $profile['pictureUrl'];
