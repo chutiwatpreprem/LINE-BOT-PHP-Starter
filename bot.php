@@ -209,7 +209,7 @@ $bot = new BOT_API($channelSecret, $access_token);
 
 echo "test1";
 
-$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
+//$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("Hello"));	
 
 if (!empty($bot->isEvents)) {
