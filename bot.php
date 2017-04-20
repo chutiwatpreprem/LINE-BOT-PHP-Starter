@@ -212,7 +212,7 @@ echo "test1";
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 //$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("Hello"));	
 
-if ($bot->isText) {
+if ($bot->isfollow) {
 	
 	$bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
 	
