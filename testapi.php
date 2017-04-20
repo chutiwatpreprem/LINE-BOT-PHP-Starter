@@ -67,7 +67,9 @@
 $bot = new BOT_API($channelSecret, $access_token);
 
 
-echo "test";
+echo "test1";
+
+
 if (!empty($bot->isEvents)) {
 		echo "test2";
 	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
