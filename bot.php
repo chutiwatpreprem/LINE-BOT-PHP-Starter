@@ -212,9 +212,9 @@ echo "test1";
 
 // $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 // $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-$response = $bot->getProfile($Userid);
-if ($response->isSuccess()) {
-    $profile = $response->getJSONDecodedBody();
+$bot->getProfile($Userid);
+if ($bot->isSuccess()) {
+    $profile = $bot->getJSONDecodedBody();
     echo $profile['displayName'];
     echo $profile['pictureUrl'];
     echo $profile['statusMessage'];
