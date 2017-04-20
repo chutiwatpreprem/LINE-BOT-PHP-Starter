@@ -127,7 +127,7 @@ class BOT_API extends LINEBot {
 
     public function getProfile ($userId = null) {
         $messageBuilder = new TextMessageBuilder($userId);
-        $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/profile/'.$userId, [
+        $this->response = $this->httpClient->get($this->endpointBase . '/v2/bot/profile/'.$userId, [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),
             //'source'     => $messageBuilder->buildMessage(),
