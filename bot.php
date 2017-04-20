@@ -213,7 +213,7 @@ echo "test1";
 if (!empty($bot->isEvents)) {
 		echo "test2";
 	//$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
-	$bot->sendMessageNew("1510963871",json_encode("Hello"));	
+	$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("Hello"));	
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
 		exit();
