@@ -66,7 +66,7 @@ class BOT_API extends LINEBot {
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
                     $this->isText = true;
-                    //$this->text   = (object) $event['message'];
+                    $this->text   = "สวัสดี";
                 
                 }
 				
