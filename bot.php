@@ -226,9 +226,9 @@ echo "Test"."<br>";
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 echo $thai_data = "สวัสดี";
-echo $data = iconv("tis-620","utf-8",$thai_data);
+echo $data = iconv("ISO-8859-11","utf-8",$thai_data);
 echo "Finish";
-exit();
+
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode($data));	
 
 if ($bot->isfollow) {
