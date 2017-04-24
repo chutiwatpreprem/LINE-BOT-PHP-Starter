@@ -213,20 +213,22 @@ echo "Test"."<br>";
 
 //$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-$response = $bot->getProfile($Userid);
-if ($response->isSucceeded()) {
-    $profile = $response->getJSONDecodedBody();
+// $response = $bot->getProfile($Userid);
+// if ($response->isSucceeded()) {
+//     $profile = $response->getJSONDecodedBody();
 
-    echo $profile['userId'];
-    echo $profile['displayName'];
-    echo $profile['pictureUrl'];
-    echo $profile['statusMessage'];
-    $bot->sendMessageNew($Userid, $profile['pictureUrl']." ".$profile['statusMessage']);
-}
+//     echo $profile['userId'];
+//     echo $profile['displayName'];
+//     echo $profile['pictureUrl'];
+//     echo $profile['statusMessage'];
+//     $bot->sendMessageNew($Userid, $profile['pictureUrl']." ".$profile['statusMessage']);
+// }
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 echo $thai_data = "สวัสดี";
 echo $data = iconv("tis-620","utf-8",$thai_data);
+echo "Finish";
+exit();
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode($data));	
 
 if ($bot->isfollow) {
