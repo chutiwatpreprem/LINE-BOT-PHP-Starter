@@ -1,6 +1,6 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
-//header("content-type:text/javascript;charset=utf-8");   
+//header('Content-Type: text/html; charset=utf-8');
+header("content-type:text/javascript;charset=utf-8");   
 // $proxy = 'http://fixie:L1EEC8Uy4gr9bl3@velodrome.usefixie.com:80';
 // $proxyauth = '';
 
@@ -225,7 +225,7 @@ if ($response->isSucceeded()) {
 }
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
-$thai_data = "ว่าไงวัยรุ่น2 Test";
+echo $thai_data = "ว่าไงวัยรุ่น2 Test";
 $data = iconv("tis-620","utf-8",$thai_data);
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode($data));	
 
