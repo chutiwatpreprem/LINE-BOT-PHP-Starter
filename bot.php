@@ -226,8 +226,8 @@ if ($response->isSucceeded()) {
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
 echo $thai_data = "ว่าไงวัยรุ่น2 Test";
-$data = iconv("tis-620","utf-8",$thai_data);
-$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode($data));	
+//$data = iconv("tis-620","utf-8",$thai_data);
+$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode($thai_data));	
 
 if ($bot->isfollow) {
 	
