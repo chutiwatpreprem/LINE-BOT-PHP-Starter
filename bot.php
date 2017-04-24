@@ -224,7 +224,7 @@ if ($response->isSucceeded()) {
 }
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
-//$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("Hello"));	
+$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode("ว่าไงวัยรุ่น"));	
 
 if ($bot->isfollow) {
 	
@@ -292,7 +292,7 @@ if ($bot->leave) {
 
 if ($bot->isText) {
 	
-	$bot->replyMessageNew($bot->replyToken, $bot->text,json_encode($bot->source));
+	$bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
 	
 
 	if ($bot->isSuccess()) {
