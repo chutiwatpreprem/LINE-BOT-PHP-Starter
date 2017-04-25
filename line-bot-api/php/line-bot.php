@@ -138,7 +138,7 @@ class BOT_API extends LINEBot {
     }
 
     public function replySticker ($replyToken = null, $stickerId = null, $packageId = null ) {
-        $messageBuilder = new StickerMessageBuilder (1,2);
+        $messageBuilder = new StickerMessageBuilder ($packageId,$stickerId);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),
