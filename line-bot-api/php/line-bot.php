@@ -86,7 +86,6 @@ class BOT_API extends LINEBot {
                     $this->stickerId   = $event['message']['stickerId'];
                     $this->packageId   = $event['message']['packageId'];
 
-
                 }
 
                 //  if ($event['type'] == 'follow') {
