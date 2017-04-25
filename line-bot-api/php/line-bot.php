@@ -54,56 +54,56 @@ class BOT_API extends LINEBot {
         $events               = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $this->content), true); 
         
 		
-        if (!empty($events['events'])) {
+        // if (!empty($events['events'])) {
 			
-            $this->isEvents = true;
-            $this->events   = $events['events'];
+        //     $this->isEvents = true;
+        //     $this->events   = $events['events'];
 			
-            foreach ($events['events'] as $event) {
+        //     foreach ($events['events'] as $event) {
 				
-                $this->replyToken = $event['replyToken'];
-                $this->source     = (object) $event['source'];
-                $this->message    = (object) $event['message'];
-                $this->timestamp  = $event['timestamp'];
+        //         $this->replyToken = $event['replyToken'];
+        //         $this->source     = (object) $event['source'];
+        //         $this->message    = (object) $event['message'];
+        //         $this->timestamp  = $event['timestamp'];
 				
-                if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-                    $this->isText = true;
-                    $this->text   = "สวัสดี";
+        //         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+        //             $this->isText = true;
+        //             $this->text   = "สวัสดี";
                 
-                }
+        //         }
 				
-                if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
-                    $this->isImage = true;
-                }
+        //         if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
+        //             $this->isImage = true;
+        //         }
 				
-                if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
-                    $this->isSticker = true;
-                }
+        //         if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
+        //             $this->isSticker = true;
+        //         }
 
-                 if ($event['type'] == 'follow') {
-                       $this->isfollow = true;
-                       $this->text   = 'Hi Follow';
-                }
+        //          if ($event['type'] == 'follow') {
+        //                $this->isfollow = true;
+        //                $this->text   = 'Hi Follow';
+        //         }
 
-                if ($event['type'] == 'unfollow') {
-                       $this->unfollow = true;
-                       $this->text   = 'Unfollow';
-                }
+        //         if ($event['type'] == 'unfollow') {
+        //                $this->unfollow = true;
+        //                $this->text   = 'Unfollow';
+        //         }
 
-                if ($event['type'] == 'join') {
-                       $this->join = true;
-                       $this->text   = 'join';
-                }
+        //         if ($event['type'] == 'join') {
+        //                $this->join = true;
+        //                $this->text   = 'join';
+        //         }
 
-                if ($event['type'] == 'leave') {
-                       $this->leave = true;
-                       $this->text   = 'leave';
-                }
+        //         if ($event['type'] == 'leave') {
+        //                $this->leave = true;
+        //                $this->text   = 'leave';
+        //         }
 
 				
-            }
+        //     }
 
-        }
+        // }
 		
         parent::__construct($this->httpClient, [ 'channelSecret' => $channelSecret ]);
 		
