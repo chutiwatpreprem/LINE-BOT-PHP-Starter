@@ -80,25 +80,25 @@ class BOT_API extends LINEBot {
                     $this->isSticker = true;
                 }
 
-                 if ($event['type'] == 'follow') {
-                       $this->isfollow = true;
-                       $this->text   = 'Hi Follow';
-                }
+                //  if ($event['type'] == 'follow') {
+                //        $this->isfollow = true;
+                //        $this->text   = 'Hi Follow';
+                // }
 
-                if ($event['type'] == 'unfollow') {
-                       $this->unfollow = true;
-                       $this->text   = 'Unfollow';
-                }
+                // if ($event['type'] == 'unfollow') {
+                //        $this->unfollow = true;
+                //        $this->text   = 'Unfollow';
+                // }
 
-                if ($event['type'] == 'join') {
-                       $this->join = true;
-                       $this->text   = 'join';
-                }
+                // if ($event['type'] == 'join') {
+                //        $this->join = true;
+                //        $this->text   = 'join';
+                // }
 
-                if ($event['type'] == 'leave') {
-                       $this->leave = true;
-                       $this->text   = 'leave';
-                }
+                // if ($event['type'] == 'leave') {
+                //        $this->leave = true;
+                //        $this->text   = 'leave';
+                // }
 
 				
             }
