@@ -297,7 +297,7 @@ if (!empty($bot->isMap)) {
     $data1 = array("520","0","520","1040"); 
     $data = array("message","Hello",$data1);
 
-    $bot->replyLocation($bot->replyToken,$pic,"this is an imagemap",$size,$data);
+    $bot->replyMap($bot->replyToken,$pic,"this is an imagemap",$size,$data);
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
         exit();
