@@ -57,7 +57,7 @@ class BOT_API extends LINEBot {
         if (!empty($events['events'])) {
 			
             $this->isEvents = true;
-            $this->events   = $events['events'];
+            //$this->events   = $events['events'];
 			
             foreach ($events['events'] as $event) {
 				
