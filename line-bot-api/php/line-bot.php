@@ -82,8 +82,6 @@ class BOT_API extends LINEBot {
 
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Location") {
                     $this->isLocation = true;
-                    //$this->text   = ($event['message']['text']);
-
                 }
 
 				
