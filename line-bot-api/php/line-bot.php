@@ -85,6 +85,7 @@ class BOT_API extends LINEBot {
                     $this->isSticker = true;
                     $this->stickerId   = $event['message']['stickerId'];
                     $this->packageId   = $event['message']['packageId'];
+                    
 
                 }
 
