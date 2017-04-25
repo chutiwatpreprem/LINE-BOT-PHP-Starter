@@ -260,8 +260,8 @@ if (!empty($bot->isSticker)) {
 }
 
 if (!empty($bot->isImage)) {
-    $pic = "https://github.com/chutiwatpreprem/LINE-BOT-PHP-Starter/blob/master/1.jpg";
-    $pic2 = "https://github.com/chutiwatpreprem/LINE-BOT-PHP-Starter/blob/master/no_pic_user.jpg";     
+    $pic = "https://example.com/original.jpg";
+    $pic2 = "https://example.com/preview.jpg";     
 
     $bot->replyImg($bot->replyToken,$pic,$pic2);
     if ($bot->isSuccess()) {
