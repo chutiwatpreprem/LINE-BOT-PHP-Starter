@@ -76,22 +76,19 @@ class BOT_API extends LINEBot {
                 $this->message    = (object) $event['message'];
                 $this->timestamp  = $event['timestamp'];
 				
-                if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != "Location") {
-                    $this->isText = true;
-                    $this->text   = ($event['message']['text']);
-                    //$this->text = "ว่าไงครับ";
-                
-                }
-
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Location") {
+                    
                     $this->isLocation = true;
-                }
 
-                if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Map") {
+                } else if($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Map"){
                     $this->isMap = true;
-                }
 
-				
+                } else if($event['type'] == 'message' && $event['message']['type'] == 'text') {
+                     $this->isText = true;
+                     $this->text   = ($event['message']['text']);
+                     //$this->text = "ว่าไงครับ";
+                }
+                
                 if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
                     $this->isImage = true;
                 }
