@@ -230,7 +230,7 @@ $data = array("Name"=> "สวัสดี","Nickname"=>"กิ๊ฟ");
 print_r($data);
 echo "Finish";
 
-$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",($data));	
+$bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",'กิ๊ฟ');	
 
 
 
