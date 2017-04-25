@@ -209,7 +209,7 @@ header("content-type:text/javascript;charset=utf-8");
 $bot = new BOT_API($channelSecret, $access_token);
 
 
-echo "Test2"."<br>";
+echo "Test"."<br>";
 
 //$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
@@ -260,8 +260,10 @@ if (!empty($bot->isSticker)) {
 }
 
 if (!empty($bot->isImage)) {
-        
-    $bot->replyImg($bot->replyToken,"https://example.com/original.jpg","https://example.com/preview.jpg");
+    $pic = "https://github.com/chutiwatpreprem/LINE-BOT-PHP-Starter/blob/master/1.jpg";
+    $pic2 = "https://github.com/chutiwatpreprem/LINE-BOT-PHP-Starter/blob/master/no_pic_user.jpg";     
+
+    $bot->replyImg($bot->replyToken,$pic,$pic2);
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
         exit();
