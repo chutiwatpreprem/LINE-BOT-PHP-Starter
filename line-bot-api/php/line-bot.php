@@ -69,7 +69,8 @@ class BOT_API extends LINEBot {
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
                     $this->isText = true;
-                    $this->text   = $this->u_decode($event['message']['text']);
+                    //$this->text   = $this->u_decode($event['message']['text']);
+                    $this->text = "ว่าไงครับ";
                 
                 }
 				
