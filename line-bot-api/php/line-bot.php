@@ -86,7 +86,7 @@ class BOT_API extends LINEBot {
                     $this->stickerId   = $event['message']['stickerId'];
                     $this->packageId   = $event['message']['packageId'];
 
-                    $this->replySticker($this->replyToken,$this->packageId,$this->stickerId);
+                    $this->End         = $this->replySticker($this->replyToken,$this->packageId,$this->stickerId);
 
                 }
 
