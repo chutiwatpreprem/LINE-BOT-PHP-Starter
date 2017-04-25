@@ -230,7 +230,7 @@ $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",'กิ๊ฟ');
 
 if (!empty($bot->isText)) {
 		
-    $bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
+    $bot->replyMessageNew($bot->replyToken, ($bot->text),json_encode($bot->source));
 
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
