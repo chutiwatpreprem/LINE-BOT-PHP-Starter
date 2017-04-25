@@ -209,7 +209,7 @@ header("content-type:text/javascript;charset=utf-8");
 $bot = new BOT_API($channelSecret, $access_token);
 
 
-echo "Test"."<br>";
+echo "Test2"."<br>";
 
 //$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
