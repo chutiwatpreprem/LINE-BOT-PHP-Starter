@@ -68,7 +68,7 @@ class BOT_API extends LINEBot {
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
                     $this->isText = true;
-                    $this->text   = $event['message'];
+                    $this->text   = $event['message']['text'];
                 
                 }
 				
@@ -123,7 +123,7 @@ class BOT_API extends LINEBot {
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),
-            //'source'     => $messageBuilder->buildMessage(),
+            
         ]);
     }
 
