@@ -245,7 +245,7 @@ if (!empty($bot->isText)) {
 
 if (!empty($bot->isSticker)) {
 		
-    $bot->replySticker($bot->replyToken,"1","1");
+    $bot->replySticker($bot->replyToken,"4","632");
 
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
