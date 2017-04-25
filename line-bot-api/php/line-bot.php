@@ -80,6 +80,9 @@ class BOT_API extends LINEBot {
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
                     $this->isSticker = true;
+                    $this->text   = ($event['message']);
+
+
                 }
 
                 //  if ($event['type'] == 'follow') {
