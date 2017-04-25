@@ -9,7 +9,9 @@ use \LINE\LINEBot\MessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder; 
-use \LINE\LINEBot\MessageBuilder\LocationMessageBuilder; 
+use \LINE\LINEBot\MessageBuilder\LocationMessageBuilder;  
+use \LINE\LINEBot\MessageBuilder\ImagemapMessageBuilder;
+
 
 class BOT_API extends LINEBot {
 	
@@ -33,6 +35,7 @@ class BOT_API extends LINEBot {
     public $join            = false;
     public $leave           = false;
     public $isLocation      = false;
+    public $isMap           = false;
 
     public $text            = null;
     public $replyToken      = null;
@@ -82,6 +85,10 @@ class BOT_API extends LINEBot {
 
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Location") {
                     $this->isLocation = true;
+                }
+
+                if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Map") {
+                    $this->isMap = true;
                 }
 
 				
@@ -167,6 +174,15 @@ class BOT_API extends LINEBot {
 
     public function replyLocation ($replyToken = null, $title = null, $address = null , $latitude = null, $longitude = null) {
         $messageBuilder = new LocationMessageBuilder ($title,$address,$latitude,$longitude);
+        $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
+            'replyToken' => $replyToken,
+            'messages'   => $messageBuilder->buildMessage(),
+            
+        ]);
+    }
+
+     public function replyMap ($replyToken = null, $baseUrl = null, $altText = null , $baseSizeBuilder = null, $imagemapActionBuilders = null) {
+        $messageBuilder = new ImagemapMessageBuilder ($baseUrl,$altText,$baseSizeBuilder,$imagemapActionBuilders);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),

@@ -227,6 +227,8 @@ echo "Test"."<br>";
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",("Hello")); // Line Euro
 
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",'กิ๊ฟ');
+$pic = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/1.jpg";
+$pic2 = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/no_pic_user.jpg";
 
 if (!empty($bot->isText)) {
 		
@@ -260,8 +262,7 @@ if (!empty($bot->isSticker)) {
 }
 
 if (!empty($bot->isImage)) {
-    $pic = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/1.jpg";
-    $pic2 = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/no_pic_user.jpg";     
+         
 
     $bot->replyImg($bot->replyToken,$pic,$pic2);
     if ($bot->isSuccess()) {
@@ -289,6 +290,29 @@ if (!empty($bot->isLocation)) {
     exit();
 
 }
+
+if (!empty($bot->isMap)) {
+    
+    $size = array("1040","1040"); 
+    $data1 = array("520","0","520","1040"); 
+    $data = array("message","Hello",$data1);
+
+    $bot->replyLocation($bot->replyToken,$pic,"this is an imagemap",$size,$data);
+    if ($bot->isSuccess()) {
+        echo 'Succeeded!';
+        exit();
+    }
+
+    // Failed
+    echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+    exit();
+
+}
+
+
+
+
+
 
 
 // if ($bot->isEvents) {
