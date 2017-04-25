@@ -68,7 +68,7 @@ class BOT_API extends LINEBot {
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
                     $this->isText = true;
-                    $this->text   = u_decode($event['message']['text']);
+                    $this->text   = ($event['message']['text']);
                 
                 }
 				
@@ -147,16 +147,16 @@ class BOT_API extends LINEBot {
 		
     }
 
-    public function mat ($matches) {
-    return mb_convert_encoding(pack('H*',$matches[1]),'UTF-8','UTF-16');
-    }
-    public function u_decode($input){
-        return preg_replace_callback( '/\\\\u([0-9a-zA-Z]{4})/', mat , $input );
-    }
-    public function raw_json_encode($input) {
-    // convert 2 utf8 json encode 
-        return u_decode( json_encode($input) );
-    }
+    // public function mat ($matches) {
+    //      return mb_convert_encoding(pack('H*',$matches[1]),'UTF-8','UTF-16');
+    // }
+    // public function u_decode($input){
+    //     return preg_replace_callback( '/\\\\u([0-9a-zA-Z]{4})/', mat , $input );
+    // }
+    // public function raw_json_encode($input) {
+    // // convert 2 utf8 json encode 
+    //     return u_decode( json_encode($input) );
+    // }
     //echo u_decode('\u0e27\u0e48\u0e32\u0e44\u0e07');
 	
 }
