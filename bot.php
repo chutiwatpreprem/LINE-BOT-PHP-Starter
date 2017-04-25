@@ -225,11 +225,14 @@ echo "Test"."<br>";
 // }
 
 //$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
-echo $data = array("Name"=> "สวัสดี","Nickname"=>"กิ๊ฟ");
+$data = array("Name"=> "สวัสดี","Nickname"=>"กิ๊ฟ");
 //echo $data = iconv("ISO-8859-11","utf-8",$thai_data);
+print_r($data);
 echo "Finish";
 
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",json_encode($data));	
+
+
 
 if ($bot->isfollow) {
 	
