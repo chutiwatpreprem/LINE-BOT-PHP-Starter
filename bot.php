@@ -278,7 +278,7 @@ if (!empty($bot->isImage)) {
 
 if (!empty($bot->isLocation)) {
         
-    $bot->replyLocation($bot->replyToken,"บ้าน","62 พระรามที่ 2 แขวง บางมด เขต จอมทอง กรุงเทพมหานคร 10150 ประเทศไทย","13.6622857","100.4637975");
+    $bot->replyLocation($bot->replyToken,"บ้าน","62 พระรามที่ 2 แขวง บางมด เขต จอมทอง กรุงเทพมหานคร 10150 ประเทศไทย","13.6725673","100.4770312");
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
         exit();
