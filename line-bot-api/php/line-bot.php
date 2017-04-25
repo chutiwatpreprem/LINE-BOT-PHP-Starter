@@ -88,7 +88,7 @@ class BOT_API extends LINEBot {
                      $this->text   = ($event['message']['text']);
                      //$this->text = "ว่าไงครับ";
                 }
-                
+
                 if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
                     $this->isImage = true;
                 }
@@ -178,7 +178,7 @@ class BOT_API extends LINEBot {
         ]);
     }
 
-     public function replyMap ($replyToken = null, $baseUrl = null, $altText = null , $baseSizeBuilder = null, $imagemapActionBuilders = null) {
+     public function replyMap ($replyToken = null, $baseUrl = null, $altText = null , array $baseSizeBuilder = null, array $imagemapActionBuilders = null) {
         $messageBuilder = new ImagemapMessageBuilder ($baseUrl,$altText,$baseSizeBuilder,$imagemapActionBuilders);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,

@@ -293,9 +293,9 @@ if (!empty($bot->isLocation)) {
 
 if (!empty($bot->isMap)) {
     
-    $size = array("1040","1040"); 
-    $data1 = array("520","0","520","1040"); 
-    $data = array("message","Hello",$data1);
+    $size = array("height"=>"1040","width"=>"1040"); 
+    $data1 = array("x"=>"520","y"=>"0","width"=>"520","height"=>"1040"); 
+    $data = array("type"=>"message","text"=>"Hello",$data1);
 
     $bot->replyMap($bot->replyToken,$pic,"this is an imagemap",$size,$data);
     if ($bot->isSuccess()) {
