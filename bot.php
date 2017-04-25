@@ -224,7 +224,7 @@ echo "Test2"."<br>";
 //     $bot->sendMessageNew($Userid, $profile['pictureUrl']." ".$profile['statusMessage']);
 // }
 
-//$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",json_encode("Hello")); // Line Euro
+//$bot->sendMessageNew("U878d2e68fae6303fcce353c03872a4c5",("Hello")); // Line Euro
 
 $bot->sendMessageNew("Uf55b4f528d36c8246795e12f636afa08",'กิ๊ฟ');
 
@@ -245,7 +245,7 @@ if (!empty($bot->isText)) {
 
 if (!empty($bot->isSticker)) {
 		
-    $bot->replyMessageNew($bot->replyToken, json_encode($bot->text),json_encode($bot->source));
+    $bot->replySticker($bot->replyToken, ($bot->stickerId),($bot->packageId));
 
     if ($bot->isSuccess()) {
         echo 'Succeeded!';

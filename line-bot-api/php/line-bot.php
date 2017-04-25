@@ -80,7 +80,8 @@ class BOT_API extends LINEBot {
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
                     $this->isSticker = true;
-                    $this->text   = $event['message'];
+                    $this->stickerId   = $event['message']['stickerId'];
+                    $this->packageId   = $event['message']['packageId'];
 
 
                 }
@@ -126,6 +127,15 @@ class BOT_API extends LINEBot {
 	
     public function replyMessageNew ($replyToken = null, $message = null , $source = null) {
         $messageBuilder = new TextMessageBuilder($message,$source);
+        $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
+            'replyToken' => $replyToken,
+            'messages'   => $messageBuilder->buildMessage(),
+            
+        ]);
+    }
+
+    public function replySticker ($replyToken = null, $stickerId = null,$packageId = null ) {
+        $messageBuilder = new TextMessageBuilder($stickerId,$packageId);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),
