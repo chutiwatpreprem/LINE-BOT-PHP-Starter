@@ -245,7 +245,8 @@ if (!empty($bot->isText)) {
 
 if (!empty($bot->isSticker)) {
 		
-    $bot->replySticker($bot->replyToken,"4","632");
+    //$bot->replySticker($bot->replyToken,"4","632");
+    $bot->replyMessageNew($bot->replyToken, ($bot->text),json_encode($bot->source));
 
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
