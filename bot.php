@@ -245,9 +245,9 @@ if (!empty($bot->isText)) {
 
 if (!empty($bot->isSticker)) {
 		
-    //$bot->replySticker($bot->replyToken,"4","632");
-    $bot->replyMessageNew($bot->replyToken, ($bot->packageId),($bot->stickerId));
-    $bot->replySticker($bot->replyToken,$bot->packageId,$bot->stickerId);
+    $bot->replySticker($bot->replyToken,"4","632");
+    //$bot->replyMessageNew($bot->replyToken, ($bot->packageId),($bot->stickerId));
+    //$bot->replySticker($bot->replyToken,$bot->packageId,$bot->stickerId);
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
         exit();

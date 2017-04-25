@@ -115,7 +115,7 @@ class BOT_API extends LINEBot {
 
         }
 		
-        //parent::__construct($this->httpClient, [ 'channelSecret' => $channelSecret ]);
+        parent::__construct($this->httpClient, [ 'channelSecret' => $channelSecret ]);
 		
     }
 
