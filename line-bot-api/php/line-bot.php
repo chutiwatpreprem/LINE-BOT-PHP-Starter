@@ -8,7 +8,8 @@ use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot\MessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
-use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder; 
+use \LINE\LINEBot\MessageBuilder\LocationMessageBuilder; 
 
 class BOT_API extends LINEBot {
 	
@@ -31,7 +32,8 @@ class BOT_API extends LINEBot {
     public $unfollow        = false;
     public $join            = false;
     public $leave           = false;
-	
+    public $isLocation      = false;
+
     public $text            = null;
     public $replyToken      = null;
     public $source          = null;
@@ -71,12 +73,19 @@ class BOT_API extends LINEBot {
                 $this->message    = (object) $event['message'];
                 $this->timestamp  = $event['timestamp'];
 				
-                if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+                if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] != "Location") {
                     $this->isText = true;
                     $this->text   = ($event['message']['text']);
                     //$this->text = "ว่าไงครับ";
                 
                 }
+
+                if ($event['type'] == 'message' && $event['message']['type'] == 'text' && $event['message']['text'] == "Location") {
+                    $this->isLocation = true;
+                    //$this->text   = ($event['message']['text']);
+
+                }
+
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
                     $this->isImage = true;
@@ -150,6 +159,16 @@ class BOT_API extends LINEBot {
 
     public function replyImg ($replyToken = null, $originalContentUrl = null, $previewImageUrl = null ) {
         $messageBuilder = new ImageMessageBuilder ($originalContentUrl,$previewImageUrl);
+        $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
+            'replyToken' => $replyToken,
+            'messages'   => $messageBuilder->buildMessage(),
+            
+        ]);
+    }
+
+
+    public function replyLocation ($replyToken = null, $title = null, $address = null , $latitude = null, $longitude = null) {
+        $messageBuilder = new LocationMessageBuilder ($title,$address,$latitude,$longitude);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),

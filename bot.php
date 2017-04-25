@@ -273,7 +273,23 @@ if (!empty($bot->isImage)) {
     echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
     exit();
 
-}   		
+}   
+
+
+if (!empty($bot->isLocation)) {
+        
+    $bot->replyLocation($bot->replyToken,"my location","〒150-0002 東京都渋谷区渋谷２丁目２１−１","35.65910807942215","139.70372892916203");
+    if ($bot->isSuccess()) {
+        echo 'Succeeded!';
+        exit();
+    }
+
+    // Failed
+    echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+    exit();
+
+}
+
 
 // if ($bot->isEvents) {
 	
