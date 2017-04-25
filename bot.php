@@ -261,7 +261,7 @@ if (!empty($bot->isSticker)) {
 
 if (!empty($bot->isImage)) {
     $pic = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/1.jpg";
-    $pic2 = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/1.jpg";     
+    $pic2 = "https://raw.githubusercontent.com/chutiwatpreprem/LINE-BOT-PHP-Starter/master/no_pic_user.jpg";     
 
     $bot->replyImg($bot->replyToken,$pic,$pic2);
     if ($bot->isSuccess()) {
