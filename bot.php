@@ -257,7 +257,21 @@ if (!empty($bot->isSticker)) {
     echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
     exit();
 
-}		
+}
+
+if (!empty($bot->isImage)) {
+        
+    $bot->replyImg($bot->replyToken,"https://example.com/original.jpg","https://example.com/preview.jpg");
+    if ($bot->isSuccess()) {
+        echo 'Succeeded!';
+        exit();
+    }
+
+    // Failed
+    echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+    exit();
+
+}   		
 
 // if ($bot->isEvents) {
 	

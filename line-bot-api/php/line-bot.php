@@ -8,6 +8,7 @@ use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot\MessageBuilder;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\ImageMessageBuilder;
 
 class BOT_API extends LINEBot {
 	
@@ -140,6 +141,15 @@ class BOT_API extends LINEBot {
 
     public function replySticker ($replyToken = null, $packageId = null, $stickerId = null ) {
         $messageBuilder = new StickerMessageBuilder ($packageId,$stickerId);
+        $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
+            'replyToken' => $replyToken,
+            'messages'   => $messageBuilder->buildMessage(),
+            
+        ]);
+    }
+
+    public function replyImg ($replyToken = null, $originalContentUrl = null, $previewImageUrl = null ) {
+        $messageBuilder = new ImageMessageBuilder ($originalContentUrl,$previewImageUrl);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
             'messages'   => $messageBuilder->buildMessage(),
