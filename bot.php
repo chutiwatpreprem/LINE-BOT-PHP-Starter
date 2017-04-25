@@ -241,7 +241,22 @@ if (!empty($bot->isText)) {
     echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
     exit();
 
-}	
+}
+
+if (!empty($bot->isSticker)) {
+		
+    $bot->replyMessageNew($bot->replyToken, ($bot->text),json_encode($bot->source));
+
+    if ($bot->isSuccess()) {
+        echo 'Succeeded!';
+        exit();
+    }
+
+    // Failed
+    echo $bot->response->getHTTPStatus . ' ' . $bot->response->getRawBody(); 
+    exit();
+
+}		
 
 // if ($bot->isEvents) {
 	
