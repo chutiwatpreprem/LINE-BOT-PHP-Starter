@@ -50,14 +50,14 @@ class BOT_API extends LINEBot {
         $this->endpointBase   = LINEBot::DEFAULT_ENDPOINT_BASE;
 		
         $this->content        = file_get_contents('php://input');
-        $events               = json_decode($this->content, true); 
+        //$events               = json_decode($this->content, true); 
        // $events               = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $this->content), true); 
         
 		
         if (!empty($events['events'])) {
 			
             $this->isEvents = true;
-            //$this->events   = $events['events'];
+            $this->events   = $events['events'];
 			
             foreach ($events['events'] as $event) {
 				
